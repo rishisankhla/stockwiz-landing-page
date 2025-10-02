@@ -227,7 +227,7 @@ export const Frame: React.FC = () => {
 
     return () => clearInterval(timer);
   }, []);
-
+ 
   return (
     <main className="flex flex-col w-full max-w-[1272px] items-center gap-5 px-4 md:px-0">
       <section className="flex flex-col w-full max-w-[916px] items-center gap-4">

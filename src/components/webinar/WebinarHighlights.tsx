@@ -40,11 +40,11 @@ const StackingCard: React.FC<StackingCardProps> = ({ item, index, total }) => {
 
 export const WebinarHighlights: React.FC = () => {
   return (
-    <section className="min-h-screen p-4 md:p-8 pb-1 flex justify-center items-start">
-      <div className="w-full max-w-[1277px] flex flex-col">
+    <section className="min-h-screen p-4 md:p-8 pb-1 flex justify-center items-start overflow-hidden">
+      <div className="w-full max-w-[1272px] flex flex-col">
         <WebinarHeader />
 
-        <main className="relative flex flex-col gap-4 md:gap-7 w-full max-w-[1272px]">
+        <main className="relative flex flex-col gap-4 md:gap-7 w-full">
           {webinarData.map((item, index) => (
             <StackingCard key={item.id} item={item} index={index} total={webinarData.length} />
           ))}

@@ -16,9 +16,9 @@ function App() {
       </div>
 
       <TrustedCompanies />
-      <WebinarHighlights />
-      <JoinButtonsSection />
-      <Frame />
+       <WebinarHighlights />   
+      <JoinButtonsSection /> 
+      <Frame /> 
       <LearningSection />
     </div>
   );

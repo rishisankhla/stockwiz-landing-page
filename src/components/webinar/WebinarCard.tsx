@@ -60,7 +60,7 @@ const CardContent: React.FC<CardContentProps> = ({ item }) => {
   };
 
   return (
-    <div className="flex flex-col w-full lg:w-[602px] items-start gap-4 md:gap-5">
+    <div className="flex flex-col w-full lg:flex-1 lg:max-w-[602px] items-start gap-4 md:gap-5">
       <img
         className="w-[40px] h-[40px] md:w-[51px] md:h-[51px] transition-transform duration-300 hover:scale-110"
         alt="Feature icon"
@@ -86,7 +86,7 @@ const CardImage: React.FC<CardImageProps> = ({ item }) => {
     : "top-[20px] md:top-[34px] left-[20px] md:left-[38px] right-[20px] md:right-[38px] bottom-[20px]";
 
   return (
-    <div className="relative w-full lg:w-[570px] h-[250px] md:h-[300px] lg:h-[425px] bg-white/[0.06] rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/10">
+    <div className="relative w-full lg:flex-1 lg:max-w-[570px] h-[250px] md:h-[300px] lg:h-[425px] bg-white/[0.06] rounded-3xl overflow-hidden transition-all duration-300 hover:bg-white/10">
       <img
         src={item.hasVerifiedBadge ? lotBookedImage : innerDivImage}
         alt="Inner content"
@@ -117,7 +117,7 @@ export const WebinarCard: React.FC<WebinarCardProps> = ({ item }) => {
       className={`w-full h-auto rounded-3xl overflow-hidden border-0 transition-all duration-300 hover:transform hover:translate-y-[-4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] ${item.backgroundColor}`}
     >
       <div className="flex flex-col items-start gap-2.5 p-4 md:p-8">
-        <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-6 lg:gap-0">
+        <div className="flex flex-col lg:flex-row items-start justify-between w-full gap-6 lg:gap-6">
           <CardContent item={item} />
           <CardImage item={item} />
         </div>
