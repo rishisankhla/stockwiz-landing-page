@@ -13,7 +13,7 @@ A modern, production-ready landing page for StrykeX, India's leading AI-powered 
 This project demonstrates advanced React development skills through a sophisticated landing page featuring complex animations, custom hooks, component architecture, and modern React patterns. The application is built with performance, scalability, and maintainability in mind.
 
 **Lines of Code Written:** 2,300+ lines of production-quality code
-**Components Created:** 16 reusable components
+**Components Created:** 17 reusable components
 **Total Project Size:** 4,600+ lines including configuration
 
 ---
@@ -108,14 +108,69 @@ src/
 
 ### Component Breakdown
 
-| Component | Complexity | Features |
-|-----------|-----------|----------|
-| **Hero** | High | Mouse-tracking parallax, refs, complex state |
-| **HeroBackground** | Medium | Dynamic calculations, responsive gradients |
-| **HeroTradingCard** | High | Conditional animations, complex layouts |
-| **HeroCTASection** | High | Factory functions, dynamic variants |
-| **SignupModal** | Medium | Form handling, controlled inputs, validation |
-| **WebinarHighlights** | Medium | Grid layouts, responsive design |
+#### Hero Section Components
+| Component | Complexity | Lines | Features |
+|-----------|-----------|-------|----------|
+| **Hero** | High | 85+ | Main hero container, mouse-tracking parallax, useRef hooks, useEffect for event listeners, complex state management, cleanup functions, orchestrates all hero sub-components |
+| **HeroBackground** | High | 160+ | Dynamic gradient calculations with interactive mouse-following blur effects, responsive positioning, mouse position tracking, real-time blur effects, corner blur decorations |
+| **HeaderSection** | Medium | 53+ | Navigation header with logo and sign-up button, modal state management, flexbox navigation, responsive header, CTA button integration, z-index layering |
+| **HeroContentSection** | High | 122+ | Animated title with AI Powered Signals messaging, Framer Motion variants, staggered text animations with multiple variants, responsive typography, semantic HTML, icon animations |
+| **HeroImagesSection** | Low | 46+ | Attendee count display (1,00,000+ Attendees), profile image avatars, absolute positioning, z-index management, image optimization, avatar stacking effects |
+| **HeroCTASection** | High | 246+ | Animated CTA buttons for English and Hindi webinars, factory pattern for animations, dynamic variant generation, 3D transforms, sequential delays, gradient blur effects, price display with strikethrough |
+| **HeroTradingCard** | High | 304+ | Complex animated trading signal card displaying NIFTY options, conditional animations, progress bar with entry/stop loss/target, live badge, profit/loss calculations, multiple animation variants |
+| **HeroSideCards** | Medium | 77+ | Animated side trading cards on larger screens, absolute positioning with advanced transforms, responsive breakpoints, entrance animations with spring physics, gradient backgrounds |
+
+#### Webinar Section Components
+| Component | Complexity | Lines | Features |
+|-----------|-----------|-------|----------|
+| **Frame** | High | 248+ | Live Q&A countdown section with session cards, countdown timer with useEffect, session configuration, gradient blur effects, multiple session displays (English/Hindi) |
+| **WebinarCard** | Medium | 128+ | Individual webinar highlight cards with icons and descriptions, card design patterns, hover effects with transforms, image optimization, verified badge support, structured content layout |
+| **WebinarHeader** | Low | 17+ | Section header for webinar highlights, typography hierarchy, centered layouts, gradient text effects, responsive headings |
+| **WebinarHighlights** | High | 56+ | Stacking scroll animation container, Framer Motion scroll-triggered animations, useScroll and useTransform hooks, sticky positioning with progressive reveal, responsive breakpoints |
+| **webinarData** | Low | 48+ | Data configuration file for 4 webinar highlight cards with icons, titles, descriptions, and styling |
+
+#### Main Section Components
+| Component | Complexity | Lines | Features |
+|-----------|-----------|-------|----------|
+| **JoinButtonsSection** | Medium | 166+ | Join CTA section with Hindi and English buttons, dual CTA buttons with pricing display, gradient blur effects, responsive stacking, flexbox alignment, button variants with hover effects |
+| **LearningSection** | High | 136+ | Learning modules section showing what attendees will learn, grid system with 4 module cards, topic cards with featured highlighting, responsive columns, custom Card components, icon library usage, hover interactions |
+| **TrustedCompanies** | High | 116+ | Infinite scrolling carousel of company logos (8 logos), keyframe animations with custom CSS injection, responsive logo sizing, gradient fade masks, lazy loading, hover pause functionality |
+
+#### Common Components
+| Component | Complexity | Lines | Features |
+|-----------|-----------|-------|----------|
+| **SignupModal** | High | 160+ | Modal form for user registration (name, email, phone), controlled form inputs, state management, validation ready, backdrop effects with blur, responsive design, gradient text styling |
+
+#### Total: 17 Components
+- **High Complexity**: 10 components
+- **Medium Complexity**: 4 components
+- **Low Complexity**: 3 components
+- **Total Lines of Code**: 2,300+ lines
+
+#### Detailed Component Analysis
+
+**High Complexity Components (10):**
+1. **Hero** - Central orchestrator component managing mouse tracking, refs, side card animations, and child component coordination
+2. **HeroBackground** - Interactive gradient background with mouse-following blur effects and corner decorations
+3. **HeroContentSection** - Complex staggered animations with multiple Framer Motion variants and icon rotations
+4. **HeroCTASection** - Advanced animation factory functions creating dynamic Framer Motion variants per button with 3D transforms
+5. **HeroTradingCard** - Most complex layout with conditional animations, progress bar visualization, and profit/loss calculations
+6. **Frame** - Live countdown timer with useEffect cleanup, dual session cards, and gradient effects
+7. **WebinarHighlights** - Scroll-triggered stacking animations using Framer Motion's useScroll and useTransform hooks
+8. **LearningSection** - Grid system with featured module highlighting and custom Card components
+9. **TrustedCompanies** - Custom keyframe animations with carousel logic, CSS injection, and mobile optimization
+10. **SignupModal** - Full form management with controlled inputs, modal lifecycle, and gradient text styling
+
+**Medium Complexity Components (4):**
+1. **HeaderSection** - Navigation with modal state management and responsive design
+2. **HeroSideCards** - Absolute positioning with spring physics animations
+3. **JoinButtonsSection** - Dual CTA buttons with gradient blur effects and pricing display
+4. **WebinarCard** - Card design with hover transforms and conditional verified badge rendering
+
+**Low Complexity Components (3):**
+1. **HeroImagesSection** - Simple attendee count display with avatar stacking
+2. **WebinarHeader** - Typography-focused section header
+3. **webinarData** - Configuration data file
 
 ---
 
@@ -282,12 +337,6 @@ const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 ### Installation
 
 ```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to project directory
-cd strykex-landing-page
-
 # Install dependencies
 npm install
 
